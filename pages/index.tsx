@@ -2,8 +2,8 @@ import type { NextPage } from "next";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
-import { useRecoilState, useSetRecoilState } from "recoil";
-import { avatarAtom, nickNameAtom } from "../recoil/atoms";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
+import { avatarAtom, nickNameAtom, prefixAtom } from "../recoil/atoms";
 import { useState } from "react";
 
 interface IFormData {
@@ -16,6 +16,7 @@ const LoginPage: NextPage = () => {
   const [avatar, setAvatar] = useRecoilState(avatarAtom);
   const [openAvatar, setOpenAvatar] = useState(false);
   const { register, handleSubmit } = useForm<IFormData>();
+  const prefix = useRecoilValue(prefixAtom);
   const avatarList = [
     "쥐",
     "소",
@@ -66,7 +67,7 @@ const LoginPage: NextPage = () => {
               {avatar && (
                 <Image
                   className="rounded-full"
-                  src={`/avatar/${avatar}.jpg`}
+                  src={`${prefix}/avatar/${avatar}.jpg`}
                   alt="avatar"
                   width={48}
                   height={48}
