@@ -5,6 +5,8 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import isToday from "dayjs/plugin/isToday";
 import isYesterday from "dayjs/plugin/isYesterday";
 import Image from "next/image";
+import { useRecoilValue } from "recoil";
+import { prefixAtom } from "../recoil/atoms";
 
 dayjs.locale("ko");
 dayjs.extend(localizedFormat);
@@ -23,6 +25,7 @@ const ChatMessage = ({ nickName, chat, day, avatar }: IChatMessage) => {
   const dateFormatLT = dayjs(day).format("LT");
   const dateFormatL = dayjs(day).format("L");
   const fromNow = dayjs(day).fromNow();
+  const prefix = useRecoilValue(prefixAtom);
 
   function isTodayOrIsYesterday(day: dayjs.Dayjs) {
     if (dayjs(day).isToday()) {
@@ -42,7 +45,7 @@ const ChatMessage = ({ nickName, chat, day, avatar }: IChatMessage) => {
             {avatar && (
               <Image
                 className="rounded-full"
-                src={`/avatar/${avatar}.jpg`}
+                src={`${prefix}/avatar/${avatar}.jpg`}
                 alt="avatar"
                 width={48}
                 height={48}

@@ -1,6 +1,11 @@
 import { Dayjs } from "dayjs";
 import { atom } from "recoil";
 
+export const prefixAtom = atom({
+  key: "prefix",
+  default: "http://zpdl95.github.io/chat-app",
+});
+
 export const nickNameAtom = atom({
   key: "nickName",
   default: "",
