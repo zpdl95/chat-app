@@ -11,7 +11,6 @@ import {
   db,
   makeRoomLayerAtom,
   nickNameAtom,
-  prefixAtom,
   roomName,
 } from "../recoil/atoms";
 import { Socket } from "socket.io-client";
@@ -143,7 +142,6 @@ const RoomName = ({ rN, socket }: IRoomName) => {
 const UserInfo = () => {
   const nickName = useRecoilValue(nickNameAtom);
   const avatar = useRecoilValue(avatarAtom);
-  const prefix = useRecoilValue(prefixAtom);
   return (
     <div className="left-section__user-info ; grid grid-cols-[1.1fr_1fr] bg-gray-800">
       <div className="user-info ; grid grid-cols-[1fr_1.5fr]">
@@ -151,7 +149,7 @@ const UserInfo = () => {
           {avatar && (
             <Image
               className="rounded-full"
-              src={`${prefix}/avatar/${avatar}.jpg`}
+              src={`/avatar/${avatar}.jpg`}
               alt="avatar"
               width={48}
               height={48}

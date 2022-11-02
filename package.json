@@ -1,15 +1,16 @@
 {
-  "homepage": "http://zpdl95.github.io/chat-app",
+  "homepage": "https://zpdl95.github.io/chat-app",
   "name": "chat-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
+    "export": "next export",
     "start": "next start",
     "lint": "next lint",
-    "predeploy": "npm run build",
-    "deploy": "touch out/.nojekyll && git add -f out/ && git commit -m 'deploy to gh-pages' && git subtree push --prefix out origin gh-pages"
+    "predeploy": "rd /s/q out && npm run build && npm run export",
+    "deploy": "echo > out/.nojekyll && git add -f out/ && git commit -m \"deploy to gh-pages\" && git subtree push --prefix out origin gh-pages"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",

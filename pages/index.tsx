@@ -16,7 +16,6 @@ const LoginPage: NextPage = () => {
   const [avatar, setAvatar] = useRecoilState(avatarAtom);
   const [openAvatar, setOpenAvatar] = useState(false);
   const { register, handleSubmit } = useForm<IFormData>();
-  const prefix = useRecoilValue(prefixAtom);
   const avatarList = [
     "쥐",
     "소",
@@ -67,7 +66,7 @@ const LoginPage: NextPage = () => {
               {avatar && (
                 <Image
                   className="rounded-full"
-                  src={`${prefix}/avatar/${avatar}.jpg`}
+                  src={`/avatar/${avatar}.jpg`}
                   alt="avatar"
                   width={48}
                   height={48}

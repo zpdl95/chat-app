@@ -1,14 +1,11 @@
 import Image from "next/image";
-import { useRecoilValue } from "recoil";
 import { IAllSockets } from "../pages/chats/[room]";
-import { prefixAtom } from "../recoil/atoms";
 
 interface IUserContainer {
   allSockets: IAllSockets[] | undefined;
 }
 
 const UserContainer = ({ allSockets }: IUserContainer) => {
-  const prefix = useRecoilValue(prefixAtom);
   return (
     <div className="content__user-container ; bg-gray-700">
       <div className="user-container__list ; w-full h-full relative">
@@ -20,7 +17,7 @@ const UserContainer = ({ allSockets }: IUserContainer) => {
                   {socket.avatar && (
                     <Image
                       className="rounded-full"
-                      src={`${prefix}/avatar/${socket.avatar}.jpg`}
+                      src={`/avatar/${socket.avatar}.jpg`}
                       alt="avatar"
                       width={48}
                       height={48}

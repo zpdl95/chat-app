@@ -3,7 +3,10 @@ import { atom } from "recoil";
 
 export const prefixAtom = atom({
   key: "prefix",
-  default: "http://zpdl95.github.io/chat-app",
+  default:
+    process.env.NODE_ENV === "production"
+      ? "https://zpdl95.github.io/chat-app"
+      : "",
 });
 
 export const nickNameAtom = atom({

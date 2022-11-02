@@ -31,7 +31,7 @@ import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 
 const socket: Socket<ServerToClientEvents, ClientToServerEvents> = io({
-  path: "/api/socket", //path = socket.io가 있는 위치를 지정하면 됨
+  path: `/api/socket`, //path = socket.io가 있는 위치를 지정하면 됨
 });
 
 export interface IAllSockets {
@@ -91,7 +91,6 @@ const ChatsPage: NextPage = () => {
   useEffect(() => {
     socket.off("recevied_message");
     socket.on("recevied_message", (roomName, nickName, avatar, text, day) => {
-      console.log("메시지 받음");
       setChatDb((prev) => {
         return {
           ...prev,
