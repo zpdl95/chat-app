@@ -31,7 +31,7 @@ import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 
 const socket: Socket<ServerToClientEvents, ClientToServerEvents> = io({
-  path: `/api/socket`, //path = socket.io가 있는 위치를 지정하면 됨
+  path: typeof window === "undefined" ? "" : `/api/socket`, //path = socket.io가 있는 위치를 지정하면 됨
 });
 
 export interface IAllSockets {
