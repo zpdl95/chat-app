@@ -5,7 +5,7 @@ export const prefixAtom = atom({
   key: "prefix",
   default:
     process.env.NODE_ENV === "production"
-      ? "https://zpdl95.github.io/chat-app"
+      ? "https://chat-app-kappa-flame.vercel.app/"
       : "",
 });
 
