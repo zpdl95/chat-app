@@ -5,7 +5,7 @@ import {
   InterServerEvents,
   ServerToClientEvents,
   SocketData,
-} from "../pages/api/socket";
+} from "./socket";
 
 export default function socketServerHandler(
   socket: Socket<

@@ -1,7 +1,7 @@
 import { Server } from "socket.io";
 import { NextApiRequest } from "next";
 import { NextApiResponseServerIO } from "../../types/chat";
-import socketServerHandler from "../../socketServerFn/socketServerHandler";
+import socketServerHandler from "./socketServerHandler";
 import dayjs from "dayjs";
 
 export interface ClientToServerEvents {
