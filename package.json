@@ -9,8 +9,7 @@
     "export": "next export",
     "start": "next start",
     "lint": "next lint",
-    "vercel-deploy": "next build && next export",
-    "predeploy": "rd /s/q out && npm run build && npm run export",
+    "predeploy": "npm run build && npm run export",
     "deploy": "echo > out/.nojekyll && git add -f out/ && git commit -m \"deploy to gh-pages\" && git subtree push --prefix out origin gh-pages"
   },
   "dependencies": {
