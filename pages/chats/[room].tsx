@@ -32,6 +32,7 @@ import { useRouter } from "next/router";
 
 const socket: Socket<ServerToClientEvents, ClientToServerEvents> = io({
   path: "/api/socket",
+  autoConnect: false,
 });
 
 export interface IAllSockets {
@@ -77,7 +78,9 @@ const ChatsPage: NextPage = () => {
   ) {
     socket.emit("show_all_sockets");
   }
-
+  useEffect(() => {
+    socket.connect();
+  }, []);
   useEffect(() => {
     socketSetUserData(socket, nickName, avatar);
   }, [nickName, avatar]);
