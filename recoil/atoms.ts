@@ -1,14 +1,6 @@
 import { Dayjs } from "dayjs";
 import { atom } from "recoil";
 
-export const prefixAtom = atom({
-  key: "prefix",
-  default:
-    process.env.NODE_ENV === "production"
-      ? "https://chat-app-kappa-flame.vercel.app/"
-      : "",
-});
-
 export const nickNameAtom = atom({
   key: "nickName",
   default: "",

@@ -2,8 +2,8 @@ import type { NextPage } from "next";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
-import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
-import { avatarAtom, nickNameAtom, prefixAtom } from "../recoil/atoms";
+import { useRecoilState, useSetRecoilState } from "recoil";
+import { avatarAtom, nickNameAtom } from "../recoil/atoms";
 import { useState } from "react";
 
 interface IFormData {
