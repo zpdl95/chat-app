@@ -145,14 +145,13 @@ const UserInfo = () => {
   return (
     <div className="left-section__user-info ; grid grid-cols-[1.1fr_1fr] bg-gray-800">
       <div className="user-info ; grid grid-cols-[1fr_1.5fr]">
-        <div className="user-image ; place-self-center rounded-full w-2/3 h-2/3 bg-white">
+        <div className="user-image ; relative place-self-center rounded-full w-2/3 h-2/3 bg-white">
           {avatar && (
             <Image
               className="rounded-full"
               src={`/avatar/${avatar}.jpg`}
               alt="avatar"
-              width={48}
-              height={48}
+              layout="fill"
             />
           )}
         </div>

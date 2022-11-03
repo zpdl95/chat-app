@@ -8,19 +8,19 @@ const repository =
 const nextConfig = {
   reactStrictMode: false,
   swcMinify: true,
-  // images: {
-  //   loader: "imgix",
-  //   // path: [repository],
-  //   // domain: [repository], // 로컬파일을 사용하면 path, 외부파일을 사용하면 domain
+  // // images: {
+  // //   loader: "imgix",
+  // //   // path: [repository],
+  // //   // domain: [repository], // 로컬파일을 사용하면 path, 외부파일을 사용하면 domain
+  // // },
+  // exportPathMap: async function (
+  //   defaultPathMap,
+  //   { dev, dir, outDir, distDir, buildId }
+  // ) {
+  //   return {
+  //     "/": { page: "/" },
+  //   };
   // },
-  exportPathMap: async function (
-    defaultPathMap,
-    { dev, dir, outDir, distDir, buildId }
-  ) {
-    return {
-      "/": { page: "/" },
-    };
-  },
 };
 
 module.exports = nextConfig;

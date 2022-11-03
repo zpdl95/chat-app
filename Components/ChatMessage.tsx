@@ -44,8 +44,7 @@ const ChatMessage = ({ nickName, chat, day, avatar }: IChatMessage) => {
                 className="rounded-full"
                 src={`/avatar/${avatar}.jpg`}
                 alt="avatar"
-                width={48}
-                height={48}
+                layout="fill"
               />
             )}
           </div>

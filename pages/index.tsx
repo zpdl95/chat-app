@@ -61,15 +61,14 @@ const LoginPage: NextPage = () => {
           <div className="relative flex justify-center items-center mb-5">
             <div
               onClick={() => setOpenAvatar((prev) => !prev)}
-              className="w-12 h-12 rounded-full bg-white hover:scale-110 transition-transform cursor-pointer"
+              className=" relative w-12 h-12 rounded-full bg-white hover:scale-110 transition-transform cursor-pointer"
             >
               {avatar && (
                 <Image
                   className="rounded-full"
                   src={`/avatar/${avatar}.jpg`}
                   alt="avatar"
-                  width={48}
-                  height={48}
+                  layout="fill"
                 />
               )}
             </div>

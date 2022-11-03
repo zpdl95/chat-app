@@ -13,14 +13,13 @@ const UserContainer = ({ allSockets }: IUserContainer) => {
           {allSockets?.map((socket, index) => (
             <li key={index} className="h-[44px] ml-2 py-[1px]">
               <div className="user-grid-box ; h-full px-2 grid grid-cols-[44px_1fr] rounded-md hover:bg-gray-300 group">
-                <div className="user-avatar ; w-[32px] h-[32px] self-center rounded-full bg-white">
+                <div className="user-avatar ; relative w-[32px] h-[32px] self-center rounded-full bg-white">
                   {socket.avatar && (
                     <Image
                       className="rounded-full"
                       src={`/avatar/${socket.avatar}.jpg`}
                       alt="avatar"
-                      width={48}
-                      height={48}
+                      layout="fill"
                     />
                   )}
                 </div>
