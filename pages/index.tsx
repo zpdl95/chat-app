@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import { avatarAtom, nickNameAtom } from "../recoil/atoms";
 import { useState } from "react";
-import ImageComponent from "../Components/Image";
+import ImageComponent from "../components/Image";
 
 interface IFormData {
   nickName: string;

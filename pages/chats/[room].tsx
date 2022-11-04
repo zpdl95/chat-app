@@ -10,11 +10,11 @@ import {
   roomList,
   roomName,
 } from "../../recoil/atoms";
-import LeftSidebar from "../../Components/LeftSidebar";
+import LeftSidebar from "../../components/LeftSidebar";
 import { ClientToServerEvents, ServerToClientEvents } from "../api/socket";
-import MessageWrapper from "../../Components/MessageWrapper";
-import UserContainer from "../../Components/UserContainer";
-import MessageForm from "../../Components/MessageForm";
+import MessageWrapper from "../../components/MessageWrapper";
+import UserContainer from "../../components/UserContainer";
+import MessageForm from "../../components/MessageForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHashtag } from "@fortawesome/sharp-solid-svg-icons";
 import {
@@ -26,7 +26,7 @@ import {
   faCircleQuestion,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
-import LeftNameSpace from "../../Components/LeftNameSpace";
+import LeftNameSpace from "../../components/LeftNameSpace";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 
