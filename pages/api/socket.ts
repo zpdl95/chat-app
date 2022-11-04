@@ -53,9 +53,6 @@ export default function socketIoHanddler(
       SocketData
     >(res.socket.server, {
       path: "/api/socket",
-      cors: {
-        origin: "https://chat-app-zpdl95.vercel.app",
-      },
     });
     res.socket.server.io = socketIoServer;
 

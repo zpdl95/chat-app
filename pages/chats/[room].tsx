@@ -30,13 +30,10 @@ import LeftNameSpace from "../../Components/LeftNameSpace";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 
-const socket: Socket<ServerToClientEvents, ClientToServerEvents> = io(
-  "https://chat-app-zpdl95.vercel.app",
-  {
-    path: "/api/socket",
-    autoConnect: false,
-  }
-);
+const socket: Socket<ServerToClientEvents, ClientToServerEvents> = io({
+  path: "/api/socket",
+  autoConnect: false,
+});
 
 export interface IAllSockets {
   id: string;
