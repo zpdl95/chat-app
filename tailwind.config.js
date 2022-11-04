@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-const plugin = require("tailwindcss/plugin");
 const { join } = require("path");
 
 module.exports = {
@@ -91,11 +90,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    plugin(({ addVariant }) => {
-      addVariant("optional", "&:optional");
-      addVariant("group-optional", ":merge(.group):optional &");
-      addVariant("peer-optional", ":merge(.peer):optional ~ &");
-    }),
-  ],
+  plugins: [],
 };
