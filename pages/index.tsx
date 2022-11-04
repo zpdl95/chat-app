@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
-import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import { avatarAtom, nickNameAtom } from "../recoil/atoms";
 import { useState } from "react";
+import ImageComponent from "../Components/Image";
 
 interface IFormData {
   nickName: string;
@@ -61,16 +61,9 @@ const LoginPage: NextPage = () => {
           <div className="relative flex justify-center items-center mb-5">
             <div
               onClick={() => setOpenAvatar((prev) => !prev)}
-              className=" relative w-12 h-12 rounded-full bg-white hover:scale-110 transition-transform cursor-pointer"
+              className="  w-12 h-12 rounded-full bg-white hover:scale-110 transition-transform cursor-pointer"
             >
-              {avatar && (
-                <Image
-                  className="rounded-full"
-                  src={`/avatar/${avatar}.jpg`}
-                  alt="avatar"
-                  layout="fill"
-                />
-              )}
+              {avatar && <ImageComponent avatar={avatar} />}
             </div>
             {openAvatar && (
               <div className="absolute -top-52 w-max flex flex-col items-center">
@@ -79,14 +72,9 @@ const LoginPage: NextPage = () => {
                     <div
                       key={index}
                       onClick={() => setAvatar(avatar)}
-                      className="relative w-12 h-12 rounded-full cursor-pointer border-solid border-gray-200 hover:border-4"
+                      className=" w-12 h-12 rounded-full cursor-pointer border-solid border-gray-200 hover:border-4"
                     >
-                      <Image
-                        className="rounded-full"
-                        src={`/avatar/${avatar}.jpg`}
-                        alt={avatar}
-                        layout="fill"
-                      />
+                      <ImageComponent avatar={avatar} />
                     </div>
                   ))}
                 </div>

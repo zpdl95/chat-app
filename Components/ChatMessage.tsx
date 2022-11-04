@@ -4,7 +4,7 @@ import localizedFormat from "dayjs/plugin/localizedFormat";
 import relativeTime from "dayjs/plugin/relativeTime";
 import isToday from "dayjs/plugin/isToday";
 import isYesterday from "dayjs/plugin/isYesterday";
-import Image from "next/image";
+import ImageComponent from "./Image";
 
 dayjs.locale("ko");
 dayjs.extend(localizedFormat);
@@ -39,14 +39,7 @@ const ChatMessage = ({ nickName, chat, day, avatar }: IChatMessage) => {
       <div className="message__grid ; w-full pt-1 pb-2 grid grid-cols-[72px_1fr_48px]">
         <div className="message__avatar ; relative">
           <div className="avatar ; absolute left-1/2 translate-x-[-50%] rounded-full w-[40px] h-[40px] bg-white">
-            {avatar && (
-              <Image
-                className="rounded-full"
-                src={`/avatar/${avatar}.jpg`}
-                alt="avatar"
-                layout="fill"
-              />
-            )}
+            {avatar && <ImageComponent avatar={avatar} />}
           </div>
         </div>
         <div className="message__content ; grid grid-rows-[22px_1fr]">

@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { IAllSockets } from "../pages/chats/[room]";
+import ImageComponent from "./Image";
 
 interface IUserContainer {
   allSockets: IAllSockets[] | undefined;
@@ -14,14 +14,7 @@ const UserContainer = ({ allSockets }: IUserContainer) => {
             <li key={index} className="h-[44px] ml-2 py-[1px]">
               <div className="user-grid-box ; h-full px-2 grid grid-cols-[44px_1fr] rounded-md hover:bg-gray-300 group">
                 <div className="user-avatar ; relative w-[32px] h-[32px] self-center rounded-full bg-white">
-                  {socket.avatar && (
-                    <Image
-                      className="rounded-full"
-                      src={`/avatar/${socket.avatar}.jpg`}
-                      alt="avatar"
-                      layout="fill"
-                    />
-                  )}
+                  {socket.avatar && <ImageComponent avatar={socket.avatar} />}
                 </div>
                 <div className="user-nickName ; self-center text-gray-400 group-hover:text-white-300">
                   {socket.nickName}
