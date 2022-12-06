@@ -10,11 +10,14 @@ import {
   roomList,
   roomName,
 } from "../../recoil/atoms";
-import LeftSidebar from "../../components/LeftSidebar";
+import {
+  LeftSidebar,
+  MessageWrapper,
+  UserContainer,
+  MessageForm,
+} from "../../components";
 import { ClientToServerEvents, ServerToClientEvents } from "../api/socket";
-import MessageWrapper from "../../components/MessageWrapper";
-import UserContainer from "../../components/UserContainer";
-import MessageForm from "../../components/MessageForm";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHashtag } from "@fortawesome/sharp-solid-svg-icons";
 import {
@@ -223,6 +226,13 @@ const LayerContainer = () => {
     });
     closeLayer();
   }
+
+  useEffect(() => {
+    return () => {
+      setCloseAnimate(true);
+      setTimeout(() => {}, 200);
+    };
+  }, []);
 
   return (
     <div
